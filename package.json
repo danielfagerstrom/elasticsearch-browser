@@ -1,0 +1,9 @@
+{
+  "author": "Daniel Fagerstrom",
+  "name": "elasticsearch-browser",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-recess": "0.1.x"
+  }
+}
