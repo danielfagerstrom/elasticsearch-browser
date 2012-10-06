@@ -16,7 +16,8 @@ files = [
   'temp/scripts/*.js',
   'temp/scripts/**/*.js',
   'test/mock/**/*.js',
-  'test/spec/**/*.js'
+  'test/spec/**/*.js',
+  'temp/test/**/*.js'
 ];
 
 
