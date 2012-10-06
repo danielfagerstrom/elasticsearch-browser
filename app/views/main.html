@@ -1,6 +1,7 @@
 <ul class="breadcrumb">
   <li><a href="#/">Indices</a></li>
 </ul>
+<input type="text" ng-model="query" class="span2 search-query">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -12,21 +13,21 @@
     </tr>
   </thead> 
   <tbody>
-    <tr ng-repeat="(indexName, stats) in indices">
+    <tr ng-repeat="index in indices | filter:query">
       <td>
-        {{indexName}}
+        {{index.name}}
       </td>
       <td>
-        {{stats.index.primary_size}}
+        {{index.stats.index.primary_size}}
       </td>
       <td>
-        {{stats.docs.num_docs}}
+        {{index.stats.docs.num_docs}}
       </td>
       <td>
-        {{stats.docs.max_doc}}
+        {{index.stats.docs.max_doc}}
       </td>
       <td>
-        {{stats.docs.deleted_docs}}
+        {{index.stats.docs.deleted_docs}}
       </td>
     </tr>
   </tbody>

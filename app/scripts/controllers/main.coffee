@@ -1,5 +1,5 @@
 @elasticsearchBrowserApp.controller "MainCtrl", ($scope) ->
-  $scope.indices = {
+  indices = {
     "prices": {
       "index" : {
         "primary_size" : "430b",
@@ -41,3 +41,5 @@
     }
   }
       
+  $scope.indices = ({name, stats} for name, stats of indices)
+  #console.log $scope.indices

@@ -17,8 +17,6 @@ describe('Controller: MainCtrl', function() {
   }));
 
   it('should attach an object of indices to the scope', function() {
-    expect(scope.indices.prices).toBeDefined();
-    expect(scope.indices.lunch).toBeDefined();
-    expect(scope.indices.social).toBeDefined();
+    expect(scope.indices.length).toBe(3);
   });
 });
