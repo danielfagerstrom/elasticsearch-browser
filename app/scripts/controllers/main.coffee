@@ -47,4 +47,5 @@
     num_docs: stats.docs.num_docs
     max_doc: stats.docs.max_doc
     deleted_docs: stats.docs.deleted_docs
-  console.log $scope.indices
+
+  $scope.orderProp = '$index'
