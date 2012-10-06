@@ -13,6 +13,8 @@ files = [
   'test/lib/angular-mocks.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
+  'temp/scripts/*.js',
+  'temp/scripts/**/*.js',
   'test/mock/**/*.js',
   'test/spec/**/*.js'
 ];
