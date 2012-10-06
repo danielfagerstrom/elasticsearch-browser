@@ -34,7 +34,7 @@ module.exports = function( grunt ) {
         src: [
             'app/styles/main.less'
         ],
-        dest: 'app/styles/main.css',
+        dest: 'temp/styles/main.css',
         options: {
           compile: true
         }
