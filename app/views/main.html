@@ -1,7 +1,12 @@
 <ul class="breadcrumb">
   <li><a href="#/">Indices</a></li>
 </ul>
-<input type="text" ng-model="query" class="span2 search-query">
+Search: <input type="text" ng-model="query" class="span2 search-query">
+Sort by:
+<select ng-model="orderProp">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -18,16 +23,16 @@
         {{index.name}}
       </td>
       <td>
-        {{index.stats.index.primary_size}}
+        {{index.primary_size}}
       </td>
       <td>
-        {{index.stats.docs.num_docs}}
+        {{index.num_docs}}
       </td>
       <td>
-        {{index.stats.docs.max_doc}}
+        {{index.max_doc}}
       </td>
       <td>
-        {{index.stats.docs.deleted_docs}}
+        {{index.deleted_docs}}
       </td>
     </tr>
   </tbody>

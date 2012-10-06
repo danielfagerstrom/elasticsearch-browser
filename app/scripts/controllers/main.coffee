@@ -41,5 +41,10 @@
     }
   }
       
-  $scope.indices = ({name, stats} for name, stats of indices)
-  #console.log $scope.indices
+  $scope.indices = for name, stats of indices
+    name: name
+    primary_size: stats.index.primary_size
+    num_docs: stats.docs.num_docs
+    max_doc: stats.docs.max_doc
+    deleted_docs: stats.docs.deleted_docs
+  console.log $scope.indices
