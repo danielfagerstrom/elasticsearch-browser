@@ -49,3 +49,10 @@
     deleted_docs: stats.docs.deleted_docs
 
   $scope.orderProp = '$index'
+
+  $scope.doSort = (field) ->
+    if $scope.orderProp is field
+      $scope.reverse=!$scope.reverse
+    else
+      $scope.reverse = false
+    $scope.orderProp=field

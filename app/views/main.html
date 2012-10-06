@@ -10,7 +10,7 @@
   <thead>
     <tr ng-init="headers=['name', 'primary_size', 'num_docs', 'max_doc', 'deleted_docs']">
       <th ng-repeat="header in headers">
-        <a href="" ng-click="$parent.orderProp=header; $parent.reverse=!$parent.reverse">{{header}}</a>
+        <a href="" ng-click="doSort(header)">{{header}}</a>
         <i ng-show="$parent.orderProp==header && $parent.reverse" class="icon-arrow-up"></i>
         <i ng-show="$parent.orderProp==header && !$parent.reverse" class="icon-arrow-down"></i>
       </th>
