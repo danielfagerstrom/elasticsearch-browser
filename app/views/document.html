@@ -1,0 +1,31 @@
+<ul class="breadcrumb">
+  <li><a href="#/">Indices</a></li> <span class="divider">/</span></li>
+  <li><a ng-href="#/{{index}}">{{index}}</a></li> <span class="divider">/</span></li>
+  <li><a ng-href="#/{{index}}/{{type}}">{{type}}</a></li> <span class="divider">/</span></li>
+  <li class="active">{{id}}</li>
+</ul>
+<ul class="nav nav-tabs">
+  <li ng-class="{active: showFields}"><a ng-click="showFields=true">Fields</a></li>
+  <li ng-class="{active: !showFields}"><a ng-click="showFields=false">Source</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane" ng-class="{active: showFields}">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>field</th>
+          <th>value</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr ng-repeat="(field, value) in document">
+          <td>{{field}}</td>
+          <td><pre>{{value | json}}</pre></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" ng-class="{active: !showFields}">
+    <pre>{{document | json}}</pre>
+  </div>
+</div>

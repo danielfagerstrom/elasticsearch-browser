@@ -11,5 +11,8 @@
     ).when("/:index/:type",
       templateUrl: "views/type.html"
       controller: "TypeCtrl"
+    ).when("/:index/:type/:id",
+      templateUrl: "views/document.html"
+      controller: "DocumentCtrl"
     ).otherwise redirectTo: "/"
   ])
