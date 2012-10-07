@@ -1,0 +1,32 @@
+<ul class="breadcrumb">
+  <li><a href="#/">Indices</a></li> <span class="divider">/</span></li>
+  <li><a ng-href="#/{{index}}">{{index}}</a></li> <span class="divider">/</span></li>
+  <li class="active">{{type}}</li>
+</ul>
+<div class="row">
+  <div class="span2">
+    <ul class="unstyled">
+      <li ng-repeat="property in properties">
+        {{property.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="span10">
+    <table class="table table-hover">
+      <thead>
+        <tr ng-init="headers=['_id', '_score']">
+          <th ng-repeat="header in headers">
+            {{header}}
+          </th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr ng-repeat="hit in hits">
+          <td ng-repeat="header in headers">
+            {{hit[header]}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

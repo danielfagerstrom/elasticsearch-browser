@@ -1,0 +1,9 @@
+<ul class="breadcrumb">
+  <li><a href="#/">Indices</a></li> <span class="divider">/</span></li>
+  <li class="active">{{index}}</li>
+</ul>
+<ul class="nav nav-pills nav-stacked">
+  <li ng-repeat="type in types">
+    <a ng-href="#/{{index}}/{{type.name}}">{{type.name}}</a>
+  </li>
+</ul>
