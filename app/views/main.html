@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  <li><a href="#/">Indices</a></li>
+  <li class="active">Indices</li>
 </ul>
 <form class="form-inline">
   <label>
@@ -19,7 +19,8 @@
   <tbody>
     <tr ng-repeat="index in indices | filter:query | orderBy:orderProp:reverse">
       <td ng-repeat="header in headers">
-        {{index[header]}}
+        <a ng-show="header=='name'" ng-href="#/{{index[header]}}">{{index[header]}}</a>
+        <span ng-show="header!='name'">{{index[header]}}</span>
       </td>
     </tr>
   </tbody>
