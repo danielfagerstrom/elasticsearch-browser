@@ -5,25 +5,31 @@
 </ul>
 <div class="row">
   <div class="span2">
-    <ul class="unstyled">
-      <li ng-repeat="property in properties">
-        {{property.name}}
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-repeat="property in properties" 
+          ng-class="{active: property.active}"
+          ng-click="property.active=!property.active">
+        <a>{{property.name}}</a>
       </li>
     </ul>
   </div>
   <div class="span10">
     <table class="table table-hover">
       <thead>
-        <tr ng-init="headers=['_id', '_score']">
-          <th ng-repeat="header in headers">
-            {{header}}
+        <tr>
+          <th>_id</th>
+          <th>_score</th>
+          <th ng-repeat="property in properties | filter:{active: true}">
+            {{property.name}}
           </th>
         </tr>
       </thead> 
       <tbody>
         <tr ng-repeat="hit in hits">
-          <td ng-repeat="header in headers">
-            {{hit[header]}}
+          <td><a ng-href="#/{{index}}/{{type}}/{{hit._id}}">{{hit._id}}</a></td>
+          <td>{{hit._score}}</td>
+          <td ng-repeat="property in properties | filter:{active: true}">
+            {{hit._source[property.name]}}
           </td>
         </tr>
       </tbody>
